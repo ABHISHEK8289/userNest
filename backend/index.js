@@ -11,8 +11,7 @@ nestServer.use(cors());
 nestServer.use(express.json());
 nestServer.use("/api", router);
 
-const PORT = 3000;
-
+const PORT = process.env.PORT || 3000;
 nestServer.listen(PORT, () => {
   console.log("nestServer Started...... And Waiting for Client Request");
 });

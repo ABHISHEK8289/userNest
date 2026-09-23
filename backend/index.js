@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const express = require("express");
 const cors = require("cors");
 const router = require("./routes/router");
@@ -11,12 +10,12 @@ nestServer.use(cors());
 nestServer.use(express.json());
 nestServer.use("/api", router);
 
-const PORT = 3000;
-
-nestServer.listen(PORT, () => {
-  console.log("nestServer Started...... And Waiting for Client Request");
-});
+const PORT = process.env.PORT || 3000;
 
 nestServer.get("/", (req, res) => {
-  res.status(200).send("<h1>nestServer Started......</h1>");
+  res.send("UserPortal Backend Running");
+});
+
+nestServer.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

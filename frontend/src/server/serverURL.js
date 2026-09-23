@@ -1,3 +1,3 @@
-const serverURL = import.meta.env.VITE_SERVER_URL;
+const serverURL = "http://localhost:3000";
 
 export default serverURL;
